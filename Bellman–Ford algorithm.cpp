@@ -34,7 +34,6 @@ int main() {
     int n, m;
     cin >> n >> m;
 
-    vector<vector<pair<int, long long>>> G(n);
     vector<Trio> E;
 
     for (int i = 0; i < m; i++) {
@@ -44,12 +43,10 @@ int main() {
         --u;
         --v;
 
-        G[u].push_back({ v, w });
         E.push_back({ u, v, w });
     }
 
     vector<long long> dist(n, (long long)1e18);
-    vector<bool> vis(n, false);
 
     int s, f;
     cin >> s >> f;
